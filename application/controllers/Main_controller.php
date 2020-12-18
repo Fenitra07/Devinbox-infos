@@ -25,6 +25,31 @@ class Main_controller extends CI_Controller {
 	}
 
 	public function dashboard(){
-		$this->load->view('dashboard');
+		$this->load->model('info');
+		$data=$this->info->getAll();
+		$this->load->view('dashboard',['data'=>$data]);
+	}
+
+	public function insertInfo(){
+		$data=array(
+			'i_titre'=>$this->input->post('i_titre'),
+			'i_date_pub'=>date("Y-m-d")
+		);
+		$this->load->model('Info');
+		$this->Info->insertion($data);
+		
+	}
+
+	public function modification(){
+		$this->load->model('info');
+		$this->info->modification();
+	}
+
+	public function supression(){
+
+	}
+
+	public function nouveau(){
+		$this->load->view("dashboard_insert");
 	}
 }

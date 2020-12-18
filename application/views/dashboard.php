@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-lg-10"></div>
             <div class="col-lg-2">
-                <a href="">Nouvelle article</a>
+                <a class="btn btn-primary" href="<?php echo site_url().'/main_controller/nouveau'; ?>">Nouvelle article</a>
                 <a href="">Deconnexion</a>
             </div>
         </div><!--fin row-->
@@ -29,30 +29,18 @@
                 </tr>
                 </thead>
                 <tbody>
+                <?php foreach($data as $row){ ?>
                 <tr>
-                    <td>Précision sur les échéances des obligations fiscales</td>
-                    <td>10/02/15</td>
+                    <td><?php echo $row->i_titre?></td>
+                    <td><?php echo $row->i_date_pub?></td>
                     <td>
-                        <a class="btn btn-warning" href="">Modifier</a>
-                        <a class="btn btn-danger" href="">Supprimer</a>
+                        <a class="btn btn-warning" href="<?php echo site_url().'/main_controller/modification/'.$row->i_id; ?>">Modifier</a>
+                        <a class="btn btn-danger" href="<?php echo site_url().'/main_controller/suppression/'.$row->i_id; ?>">Supprimer</a>
                     </td>
                 </tr>
-                <tr>
-                    <td>Reprise progressive des activités usuelles d'intervention de l'administration fiscale</td>
-                    <td>21/01/20</td>
-                    <td>
-                        <a class="btn btn-warning" href="">Modifier</a>
-                        <a class="btn btn-danger" href="">Supprimer</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Utilisation de la nouvelle plateforme E-HETRA pour les contribuables de la DGE</td>
-                    <td>08/03/16</td>
-                    <td>
-                        <a class="btn btn-warning" href="">Modifier</a>
-                        <a class="btn btn-danger" href="">Supprimer</a>
-                    </td>
-                </tr>
+                <?php
+                }
+                ?>
                 </tbody>
             </table>
             </div>
