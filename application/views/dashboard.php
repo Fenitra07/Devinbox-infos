@@ -9,10 +9,10 @@
 </head>
 <body>
     <div class="container-fluid">
-        <div class="row">
+        <div class="row border-bottom mb-5 shadow">
             <div class="col-lg-10"></div>
             <div class="col-lg-2">
-                <a class="btn btn-primary" href="<?php echo site_url().'/main_controller/nouveau'; ?>">Nouvelle article</a>
+                <a class="btn btn-outline-secondary my-5" href="<?php echo site_url().'/main_controller/nouveau'; ?>">Nouvelle article</a>
                 <a href="">Deconnexion</a>
             </div>
         </div><!--fin row-->

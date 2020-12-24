@@ -40,13 +40,25 @@ class Main_controller extends CI_Controller {
 		
 	}
 
-	public function modification(){
+	public function modification($id){
 		$this->load->model('info');
-		$this->info->modification();
+		$this->info->modification($id);
 	}
 
-	public function supression(){
+	public function editInfo(){
+		$data=array(
+			'i_titre'=>$this->input->post('i_titre'),
+			'i_date_pub'=>date("Y-m-d")
+		);
+		$id=$this->input->post('i_id');
+		$this->load->model('Info');
+		$this->Info->maj($data,$id);
 
+	}
+
+	public function suppression($id){
+		$this->load->model('info');
+		$this->info->supprimer($id);
 	}
 
 	public function nouveau(){
