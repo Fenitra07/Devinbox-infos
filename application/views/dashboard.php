@@ -17,7 +17,7 @@
             <div class="col-lg-10"></div>
             <div class="col-lg-2">
                 <a class="btn btn-outline-secondary my-5" href="<?php echo site_url().'/main_controller/nouveau'; ?>">Nouvelle article</a>
-                <a href="<?php echo site_url(); ?>" class="btn btn-outline-primary rounded-pill">Deconnexion</a>
+                <?php echo anchor('Main_controller/logout', 'Logout'); ?>
             </div>
         </div><!--fin row-->
 
@@ -45,7 +45,7 @@
                     <td><?php echo $row->i_date_pub?></td>
                     <td>
                         <a class="btn btn-warning" href="<?php echo site_url().'/main_controller/modification/'.$row->i_id; ?>"><span class="glyphicon glyphicon-pencil"></span></a>
-                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-trash"></span></a>
+                        <a class="btn btn-danger" data-toggle="modal" data-target="#myModal" data-id="<?php echo $row->i_id; ?>"><span class="glyphicon glyphicon-trash"></span></a>
                     </td>
                 </tr>
                 <?php

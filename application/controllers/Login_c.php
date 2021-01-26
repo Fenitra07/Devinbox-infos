@@ -6,4 +6,19 @@ class Login_c extends CI_Controller {
 	{
 		$this->load->view('sign_in');
 	}
+
+	public function process(){
+		$username=$this->input->post('username');
+		$pass=$this->input->post('pass');
+		if($username=='admin' && $pass=='admin'){
+			$this->load->view('dashboard');
+		}else{
+			$data['error']='Nom d\'utilisateur ou mot de passe incorrect';
+			$this->load->view('sign_in');
+		}
+	}
+
+	public function logout(){
+		redirect("sign_in");
+	}
 }

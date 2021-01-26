@@ -21,7 +21,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100 p-t-50 p-b-90">
-				<form class="login100-form validate-form flex-sb flex-w">
+				<form class="login100-form validate-form flex-sb flex-w" method="post" action ="<?php echo site_url('Main_controller/process'); ?>">
 					<span class="login100-form-title p-b-51">
 						Sign in
 					</span>
@@ -49,9 +49,10 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn">
+						<input type="submit" class="login100-form-btn" value="Login">
+						<!-- <button class="login100-form-btn">
 							<a href="<?php echo site_url().'/main_controller/dashboard';?>">Login</a>
-						</button>
+						</button> -->
 					</div>
 
 				</form>

@@ -12,6 +12,23 @@ class Main_controller extends CI_Controller {
 		$this->load->view('sign_in');
 	}
 
+	public function process(){
+		$username=$this->input->post('username');
+		$pass=$this->input->post('pass');
+		if($username=='admin' && $pass=='admin'){
+			$this->load->model('info');
+			$data=$this->info->getAll();
+			$this->load->view('dashboard',['data'=>$data]);
+		}else{
+			$data['error']='Nom d\'utilisateur ou mot de passe incorrect';
+			$this->load->view('sign_in');
+		}
+	}
+
+	public function logout(){
+		redirect("Main_controller/signin");
+	}
+
 	public function post(){
 		$this->load->view('inc/head');
 		$this->load->view('inc/navigation');
@@ -64,4 +81,6 @@ class Main_controller extends CI_Controller {
 	public function nouveau(){
 		$this->load->view("dashboard_insert");
 	}
+
+
 }

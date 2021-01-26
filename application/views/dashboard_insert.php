@@ -12,7 +12,8 @@
         <div class="row border-bottom mb-5 shadow">
             <div class="col-lg-10"></div>
             <div class="col-lg-2">
-                <a href="<?php echo site_url(); ?>" class="btn btn-outline-primary rounded-pill my-5">Deconnexion</a>
+                <!-- <a href="<?php echo site_url(); ?>" class="btn btn-outline-primary rounded-pill my-5">Deconnexion</a> -->
+                <?php echo anchor('Main_controller/logout', 'Logout'); ?>
             </div>
         </div><!--fin row-->
 
